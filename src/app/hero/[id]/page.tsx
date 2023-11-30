@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const getHeroesData = async (): Promise<{ data: IHeroData[] }> => {
-  const res = await fetch(`${process.env.DOMAIN_ORIGIN}/api/heroes`);
+  const res = await fetch(`${process.env.API_URL}/api/heroes`);
 
   if (!res.ok) {
     throw new Error("Falha na requisição");
