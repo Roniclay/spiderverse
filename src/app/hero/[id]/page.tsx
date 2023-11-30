@@ -14,10 +14,10 @@ const getHeroesData = async (): Promise<{ data: IHeroData[] }> => {
     throw new Error("Falha na requisição");
   }
 
-  return res.json()
+  return res.json();
 };
 
 export default async function Hero({ params: { id } }: IProps) {
   const heroes = await getHeroesData();
-  return <Carousel heroes={heroes.data} activeId={id}/>
+  return <Carousel heroes={heroes.data} activeId={id} />;
 }

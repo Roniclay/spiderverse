@@ -1,6 +1,6 @@
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 
 export const spidermanFont = localFont({
   src: "./spider-man.otf",
-  weight: "400"
-})
+  weight: "400",
+});

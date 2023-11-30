@@ -84,7 +84,7 @@ export default function Carousel({ heroes, activeId }: IProps) {
 
     voiceAudio.volume = 0.3;
     voiceAudio.play();
-  }, [visibleItems, transitionAudio]);
+  }, [visibleItems, transitionAudio, voicesAudio]);
 
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     setStartInteractionPosition(e.clientX);
@@ -95,7 +95,7 @@ export default function Carousel({ heroes, activeId }: IProps) {
       return null;
     }
 
-    handleChangeDragTouch(e.clientX)
+    handleChangeDragTouch(e.clientX);
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
@@ -106,16 +106,16 @@ export default function Carousel({ heroes, activeId }: IProps) {
       return null;
     }
 
-    handleChangeDragTouch(e.changedTouches[0].clientX)
+    handleChangeDragTouch(e.changedTouches[0].clientX);
   };
 
   const handleChangeDragTouch = (clientX: number) => {
     const endInteractionPosition = clientX;
-    const diffPostion = endInteractionPosition - startInteractionPosition
+    const diffPostion = endInteractionPosition - startInteractionPosition;
 
     const newPostion = diffPostion > 0 ? -1 : 1;
-    handleChangeActiveIndex(newPostion)
-  }
+    handleChangeActiveIndex(newPostion);
+  };
 
   const handleChangeActiveIndex = (newDirection: number) => {
     setActiveIndex((prevActiveIndex) => prevActiveIndex + newDirection);
